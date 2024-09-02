@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.chessboard {
+    display: grid;
+    grid-template-columns: 30px repeat(8, 50px);
+    grid-template-rows: 30px repeat(8, 50px) 30px;
+    border: 2px solid #333;
+}
+
+.board {
+    display: contents;
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+}
+
+.tile.white {
+    background-color: #eeeed2;
+}
+
+.tile.black {
+    background-color: #769656;
+}
+
+.piece.white {
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.piece.black {
+    color: #000;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+.rank-label, .label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.labels {
+    display: contents;
+}
+
+.labels.top {
+    grid-column: 2 / 10;
+    grid-row: 1;
+}
+
+.labels.bottom {
+    grid-column: 2 / 10;
+    grid-row: 10;
+}
+
+.rank-label {
+    grid-column: 1;
+}
+
+.board > .rank-label:nth-child(9n+1) {
+    background-color: transparent;
+}
